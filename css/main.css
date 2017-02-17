@@ -1,0 +1,91 @@
+body {
+	height: auto;
+}
+
+.header {
+	background-attachment: relative;
+	background-image: url(../img/background.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: 100% 100%;
+	color: #fff;
+	height: 500px;
+	text-align: center;
+	padding-top: 15%;
+}
+
+.row h1 {
+	position: absolute;
+	font-size: 60px;
+	font-family: 'Mystery Quest', cursive;
+	letter-spacing: 2px;
+	top: 0;
+	right: 100px;
+}
+
+.row form {
+	position: absolute;
+	display: inline-block;
+	top: 150px;
+	right: 350px;
+}
+
+.row button {
+	position: absolute;
+	display: inline-block;
+	font-size: 30px;
+	font-family: 'Mystery Quest', cursive;
+	border-radius: 10px;
+	top: 150px;
+	right: 175px;
+	background-color: #fff;
+}
+
+#month,
+#day {
+	font-size: 30px;
+	font-family: 'Mystery Quest', cursive;
+	background-color: #fff;
+}
+
+#month {
+	margin-right: 50px;
+}
+
+.info h1 {
+	position: absolute;
+	font-size: 50px;
+	font-family: 'Mystery Quest', cursive;
+	letter-spacing: 2px;
+	color: #fff;
+	top: 200px;
+	right: 150px;
+}
+
+.info img {
+	position: absolute;
+	top: 325px;
+	right: 175px;
+}
+
+#description {
+	position: absolute;
+	font-size: 40px;
+	font-family: 'Mystery Quest', cursive;
+	letter-spacing: 2px;
+	width: 40%;
+	color: #fff;
+	top: 50px;
+	left: 50px;
+}
+
+#compatibility {
+	position: absolute;
+	font-size: 40px;
+	font-family: 'Mystery Quest', cursive;
+	letter-spacing: 2px;
+	width: 50%;
+	color: #fff;
+	top: 450px;
+	left: 50px;
+}
