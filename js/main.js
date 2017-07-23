@@ -1,3 +1,4 @@
+// Create ARRAY of objects with zodiac sign info
 var zodiacChart = [
 	{
 		signValue: 11222,
@@ -92,21 +93,58 @@ var zodiacChart = [
 	}
 ];
 
+// Create function that grabs user day and month selection data, concatentates the strings and turns the result "var value" into an interger, then compares that to the zodiacChart signValue. It then creates a div and returns the sign name, a corresponding image, and corresponding description and compatibility.
 function signFinder(monthOption, dayOption) {
+	// Saves the select element with id="month" as a variable x.
 	var x = document.getElementById("month");
+	// console.log(x)
+	// Saves the value of the options element under the select element with id="month".
 	var m = x.options[x.selectedIndex].value;
+	// console.log(m)
+	// Saves the select element with id="day" as a variable y. 
 	var y = document.getElementById("day");
+	// console.log(y)
+	// Saves the value of the options element under the select element with id="day".
 	var d = y.options[y.selectedIndex].value;
+	// console.log(d)
+	// Turns string values of month and day into intergers and adds them together.
 	var value = parseInt(String(m) + String(d));
+	// console.log(value)
 
+	//Loops through zodiacChart array and compares value variable to signValue variable, and grabs first one that has a signValue greater than the value.
 	for (i = 0; i < zodiacChart.length; i++) {
 		if(value >= zodiacChart[i].signValue) {
+			// Logs the signName to the console.
 			console.log(zodiacChart[i].signName);
-			document.getElementById("sign").textContent = "You are a " + zodiacChart[i].signName + "!"
+			//Adds corresponding signName plus text to the h1 element.
+			document.getElementById("sign").textContent = "Your sign is: " + zodiacChart[i].signName + "!"
+			// Adds the corresponding image for the chosen signName to the img element.
 			document.getElementById("img").src = zodiacChart[i].image
+			// Adds the corresponding description data for the chosen signName to the first p element.
 			document.getElementById("description").textContent = zodiacChart[i].description
+			// Adds the corresponding compatibiity data for the chosen signName to the second p element.
 			document.getElementById("compatibility").textContent = zodiacChart[i].compatibleWith
 			return;
 		}
 	}
+};
+
+//Loops through and adds option elements with values 101 through 112 to the parent select element with id="month".
+for (let i = 101; i <= 112; i++) {
+	// Create option element
+	monthOption = document.createElement("option");
+	monthOption.value = i;
+	var monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	monthOption.textContent = monthArray[i - 101];
+	month.appendChild(monthOption);
+};
+
+//Loops through and adds option elements with values 1 through 31 to the parent select element with id="day". 
+for (let i = 1; i <= 31; i++) {
+	dayOption = document.createElement("option");
+	dayOption.textContent = i;
+	if(dayOption.textContent < 10) {
+		dayOption.textContent = "0" + i;
+	}
+	day.appendChild(dayOption);
 };
